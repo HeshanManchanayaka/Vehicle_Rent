@@ -1,0 +1,20 @@
+p{
+    color: black;
+    font-weight: 500;
+}
+#price{
+    color: goldenrod;
+    font-weight: 700;
+}
+#status{
+    color: goldenrod;
+    font-weight: 500;
+}
+#desc{
+    color: black;
+    font-weight: 400;
+}
+h5{
+    color: darkgoldenrod;
+    font-weight: 700;
+}

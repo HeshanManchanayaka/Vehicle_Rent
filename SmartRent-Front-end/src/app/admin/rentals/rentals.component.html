@@ -1,0 +1,190 @@
+<div class="rental">
+    <div class="row">
+        <div class="col-3">
+            <h1 class="text-left" id="brandName">SMART<span id="brand">RENT</span></h1>
+            <h3 id="category">RENTAL</h3>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-5">
+            <div class="container">
+                <main>
+                    <div class="row g-5" id="EmployeeForm">
+                        <div class="col-md-12 col-lg-12">
+                            <!-- <form class="needs-validation" novalidate> -->
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="state" class="form-label">Vehicle ID</label>
+                                    <select class="form-select" id="state" required id="txtemployee"
+                                        [(ngModel)]="rental.vehicleID">
+                                        <option value="">Choose...</option>
+                                        <option *ngFor="let vehicle of vehicleList" [value]="vehicle.vehicleID">
+                                            {{vehicle.vehicleID}}</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid state.
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="state" class="form-label">Customer ID</label>
+                                    <select class="form-select" id="state" required id="txtemployee"
+                                        [(ngModel)]="rental.customerID">
+                                        <option value="">Choose...</option>
+                                        <option *ngFor="let customer of customerList" [value]="customer.customerID">
+                                            {{customer.customerID}}</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please provide a valid state.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label for="lastName" class="form-label">No of days</label>
+                                    <input type="text" class="form-control" id="txtemployee" placeholder="" value=""
+                                        [(ngModel)]="rental.noOfDays" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label for="license" class="form-label">Pick-up date</label>
+                                    <input type="text" class="form-control" id="txtemployee" placeholder="" value=""
+                                        [(ngModel)]="rental.pickUpDate" required>
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label for="contactNo" class="form-label">Drop-off date</label>
+                                    <input type="text" class="form-control" id="txtemployee" placeholder="" value=""
+                                        [(ngModel)]="rental.dropOffDate" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label for="contactNo" class="form-label">Email</label>
+                                    <input type="text" class="form-control" id="txtemployee" placeholder="" value=""
+                                        [(ngModel)]="rental.email" required>
+                                    <div class="invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <button class="w-100 btn btn-primary btn-lg" type="submit" id="btn"
+                                (click)="addRental()">PROCEED
+                            </button><br><br>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </main>
+                <br>
+            </div>
+        </div>
+
+        <div class="col-7">
+            <section>
+                <!--for demo wrap-->
+                <div class="tbl-header">
+                  <table cellpadding="0" cellspacing="0" border="0">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Customer ID</th>
+                        <th>Vehicle ID</th>
+                        <th>No Of Days</th>
+                        <th></th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+                <div class="tbl-content">
+                  <table cellpadding="0" cellspacing="0" border="0">
+                    <tbody class="table-group-divider">
+                        <tr *ngFor="let rental of rentalList">
+                            <th scope="row">{{rental.rentalID}}</th>
+                            <td>{{rental.customerID}}</td>
+                            <td>{{rental.vehicleID}}</td>
+                            <td>{{rental.noOfDays}}</td>
+                            <td><button class="btn btn-danger" (click)="deleteRentalByID(rental.rentalID)"><i
+                                        class="bi bi-trash3"></i></button></td>
+                            <td><button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    (click)="viewSearchedRental(rental)"><i class="bi bi-pencil-square"></i></button></td>
+                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+        </div>
+    </div>
+
+    <!-- ======================================= UPDATING MODEL ===================================== -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Update Rental</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Vehicle ID:</label>
+                        <select class="form-select" id="state" required id="" [(ngModel)]="rental.vehicleID"
+                            [(ngModel)]="searchedRental.vehicleID">
+                            <option value="">Choose...</option>
+                            <option *ngFor="let vehicle of vehicleList" [value]="vehicle.vehicleID">
+                                {{vehicle.vehicleID}}</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Customer ID:</label>
+                        <select class="form-select" id="state" required id="" [(ngModel)]="rental.customerID"
+                            [(ngModel)]="searchedRental.customerID">
+                            <option value="">Choose...</option>
+                            <option *ngFor="let customer of customerList" [value]="customer.customerID">
+                                {{customer.customerID}}</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="searchedRental.email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">No Of Dates:</label>
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="searchedRental.noOfDays">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Pick-up Date:</label>
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="searchedRental.pickUpDate">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Drop-off Date:</label>
+                        <input type="text" class="form-control" id="recipient-name"
+                            [(ngModel)]="searchedRental.dropOffDate">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        (click)="updateRental()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

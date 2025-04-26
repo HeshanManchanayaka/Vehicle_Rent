@@ -1,0 +1,228 @@
+#brand{
+    color: #fdc100;
+}
+
+#brandName{
+  margin-top: 130px; 
+  font-family: fantasy; 
+  color: white;
+}
+#FirstSectionDesc{
+    font-size: medium;
+    font-weight: 600;
+    color: white;
+}
+.home {
+  width: 100%;
+  height: 690px;
+}
+
+#homeContent {
+  padding-left: 150px;
+}
+
+#carImage {
+  max-width: 100%;
+  height: 600px;
+}
+
+#easily{
+  font-size: 15vw;
+}
+
+@media (max-width: 817px) {
+  .home {
+      height: auto;
+  }
+  #homeContent {
+      padding-left: 0;
+      text-align: center;
+  }
+  #imageContainer {
+      margin-top: 20px;
+  }
+  #carImage {
+      height: auto;
+  }
+}
+
+.btn-group{
+  margin-left: 7px;
+}
+
+/* ================second section======== */
+
+#sectionTwo{
+  background-color: #212529;
+}
+
+.preH1{
+  font-size: 2vw;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 11vw;
+}
+
+.presentage{
+  color: #fdc100;
+}
+
+.preService{
+  color: white;
+}
+
+#ourservoces{
+  color: white;
+  text-align: left;
+  margin-top: 7vw;
+  font-size: 1.3vw;
+}
+.ourServiceP{
+  font-weight: 100;
+  font-size: 1vw;
+  color: #eed68a;
+}
+#features{
+  color: white;
+}
+p{
+  color: white;
+  font-weight: 100;
+}
+#featureHeadLine{
+  font-weight: 400;
+}
+
+/* ================ Third Section ========== */
+
+#sectionThree {
+  background-color: black;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+/* From Uiverse.io by vamsidevendrakumar */ 
+.card {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  /* border: 10px solid black; */
+  /* border-radius: 10px; */
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: black;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  /* border: 10px solid black; */
+  /* border-radius: 10px; */
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
+
+#cardCar, #cardCar1, #cardCar2 {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 925px) {
+  #cardCar, #cardCar1, #cardCar2 {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 840px) {
+  #cardCar, #cardCar1, #cardCar2 {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 770px) {
+  #cardCar, #cardCar1, #cardCar2 {
+    margin-top: 30px;
+  }
+  .card {
+    height: 154px;
+    width: 90px;
+  }
+  #sectionFour .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3vw;
+  }
+
+  #sectionFour .col-3 {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .contact, .list-unstyled {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  #sectionThree {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    margin-bottom: 20px; 
+  }
+  
+  .col-4 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .details {
+    margin: 5vw 3vw;
+  }
+  #sectionFour{
+    flex-direction: column;
+    align-items: center;
+  }
+}
